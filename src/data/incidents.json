@@ -1,0 +1,46 @@
+[
+  {
+    "title": "Accident",
+    "type": "Other",
+    "severity": "Medium",
+    "location": "Kisumu,Nyalenda",
+    "description": "Public vehicle ran into a wide load lorry",
+    "timestamp": "2025-11-26T11:37:27.072067",
+    "status": "Active",
+    "id": "inc_20251126_113727",
+    "created_at": "2025-11-26T11:37:27.072067"
+  },
+  {
+    "title": "Overflown River",
+    "type": "Flood",
+    "severity": "High",
+    "location": "Nyando Constituency",
+    "description": "Massive displacement of people",
+    "timestamp": "2025-11-27T13:41:15.920363",
+    "status": "Active",
+    "id": "inc_20251127_134115",
+    "created_at": "2025-11-27T13:41:15.920363"
+  },
+  {
+    "title": "Forest fire",
+    "type": "Flood",
+    "severity": "Medium",
+    "location": "Nyandarua forest",
+    "description": "Fire started in forest",
+    "timestamp": "2025-11-27T13:46:11.575307",
+    "status": "Active",
+    "id": "inc_20251127_134611",
+    "created_at": "2025-11-27T13:46:11.575307"
+  },
+  {
+    "title": "road Accident",
+    "type": "Road Accident",
+    "severity": "Medium",
+    "location": "Yala",
+    "description": "Headon collission",
+    "timestamp": "2025-12-01T13:58:02.834395",
+    "status": "Active",
+    "id": "inc_20251201_135802",
+    "created_at": "2025-12-01T13:58:02.834395"
+  }
+]

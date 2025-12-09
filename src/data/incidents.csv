@@ -1,0 +1,50 @@
+event_type,description,severity,casualties,affected_population,infrastructure_damage
+Flood,River overflow flooding several residential neighborhoods with water reaching 2 meters,High,4,1200,2
+Flash Flood,"Flash flood swept through riverside market at night, many shops destroyed",Critical,28,3000,3
+Flood,Heavy monsoon rains caused urban flooding in low-lying areas,Medium,1,800,1
+Flood,Dam breach caused massive flooding of agricultural lands,Critical,45,15000,3
+Flood,Localized street flooding after heavy afternoon storm,Low,0,50,0
+Earthquake,Major earthquake collapsed multiple apartment buildings in city center,Critical,180,25000,3
+Earthquake,Moderate earthquake damaged old buildings and caused panic,High,18,8000,2
+Earthquake,Minor tremor caused small cracks in some buildings,Low,0,200,1
+Earthquake,Strong aftershock following major earthquake,Medium,3,5000,1
+Tsunami,Massive tsunami waves inundated coastal villages after undersea earthquake,Critical,210,45000,3
+Tsunami,Small tsunami waves reached coastline causing minor damage,Medium,2,1000,1
+Wildfire,Rapidly spreading wildfire threatening mountain communities,High,3,1500,2
+Wildfire,Controlled brush fire in rural area,Low,0,100,0
+Wildfire,Massive forest fire spreading uncontrollably due to strong winds,Critical,12,8000,3
+Road Accident,Multi-vehicle pileup on highway during foggy conditions,High,8,35,1
+Road Accident,Minor fender bender at intersection,Low,0,4,0
+Bus Crash,Tour bus overturned on mountain road,Critical,32,60,2
+Train Derailment,Passenger train derailed while crossing bridge,Critical,45,300,3
+Train Derailment,Freight train carrying chemicals derailed in rural area,High,2,500,2
+Plane Crash,Commercial airliner crashed in residential area,Critical,189,400,3
+Small Plane Crash,Private aircraft crashed in forest,Medium,3,5,1
+Maritime Incident,Ferry capsized in stormy weather,Critical,120,250,2
+Maritime Incident,"Fishing vessel taking on water, crew rescued",Medium,0,8,1
+Chemical Spill,Industrial plant leak releasing toxic chemicals,Critical,9,5000,2
+Gas Explosion,Gas pipeline explosion in residential neighborhood,Critical,45,4000,3
+Industrial Fire,Warehouse fire with hazardous materials,High,2,200,2
+Building Collapse,Apartment building collapsed during construction,Critical,27,120,3
+Bridge Collapse,Highway bridge collapsed during rush hour,Critical,60,500,3
+House Fire,"Single family home fire, all occupants safe",Low,0,4,1
+Pandemic Cluster,Rapid COVID-19 outbreak in nursing home,High,15,200,0
+Disease Outbreak,Cholera outbreak in refugee camp,Critical,25,5000,1
+Foodborne Illness,Restaurant food poisoning incident,Low,1,20,0
+Terrorist Attack,Bomb explosion in crowded market area,Critical,98,5000,3
+Civil Unrest,Violent protests with building damage,High,12,10000,2
+Power Grid Failure,State-wide blackout during heatwave,High,8,2000000,2
+Water Contamination,Chemical spill contaminated municipal water supply,Critical,3,50000,1
+Hurricane,Category 4 hurricane made landfall,Critical,95,120000,3
+Tornado,Tornado destroyed mobile home park,High,22,3500,3
+Blizzard,Severe snowstorm stranded motorists,Medium,2,500,1
+Landslide,Mudslide buried homes after heavy rains,High,14,600,3
+Volcanic Eruption,Volcano erupted forcing mass evacuation,Critical,40,25000,3
+Drought,Severe drought affecting agricultural region,Medium,0,50000,1
+Heat Wave,Extreme temperatures causing health emergencies,High,35,1000000,0
+Avalanche,Snow avalanche at ski resort,High,8,150,2
+Sinkhole,Large sinkhole swallowed vehicles,Medium,0,50,2
+Cyber Attack,Ransomware attack on hospital systems,High,5,50000,2
+Nuclear Incident,Radiation leak at power plant,Critical,2,20000,2
+Mine Collapse,Coal mine collapse trapped workers,Critical,18,50,2
+Stampede,Crowd crush at religious festival,Critical,72,15000,1

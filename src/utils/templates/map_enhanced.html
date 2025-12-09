@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Disaster_Management_System Map</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+    <script src="qrc:///qtwebchannel/qwebchannel.js"></script>
+    <style>
+      #map {
+        height: 100vh;
+        width: 100%;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .incident-marker {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid white;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+      }
+      .resource-marker {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid white;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+      }
+      .critical {
+        background-color: #e31a1c;
+      }
+      .high {
+        background-color: #fd8d3c;
+      }
+      .medium {
+        background-color: #fecc5c;
+      }
+      .low {
+        background-color: #ffffb2;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.2);
+          opacity: 0.8;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      .pulse {
+        animation: pulse 1.5s infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      // ==================== Kenya Disaster Map API ==================== //
+      window.MapAPI = (() => {
+        let map;
+        let markers;
+        let heatLayer = null;
+        let alertCircles;
+        let bridge;
+        let clusteringEnabled = true;
+        let currentHeatmapData = [];
+
+        // --- Initialize Qt WebChannel Bridge (Python ↔ JS communication) ---
+        new QWebChannel(qt.webChannelTransport, function (channel) {
+          bridge = channel.objects.bridge;
+          console.log("Bridge connected");
+          initMap();
+        });
+
+        // --- Initialize the Leaflet Map ---
+        function initMap() {
+          map = L.map("map", {
+            center: [0.0236, 37.9062], // Center on Kenya
+            zoom: 6.5,
+            minZoom: 5,
+            maxZoom: 18,
+            zoomControl: true,
+            preferCanvas: true,
+            worldCopyJump: true,
+            maxBounds: [
+              [-5.0, 33.0], // Southwest Kenya boundary
+              [5.0, 42.0], // Northeast Kenya boundary
+            ],
+          });
+
+          // --- Base Layer (OpenStreetMap) ---
+          L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution:
+              "&copy; OpenStreetMap contributors | Kenya DisasterConnect",
+            maxZoom: 18,
+            minZoom: 5,
+          }).addTo(map);
+
+          // --- Marker Clustering for Incident Density ---
+          markers = L.markerClusterGroup({
+            chunkedLoading: true,
+            maxClusterRadius: 50,
+            spiderfyOnMaxZoom: true,
+            showCoverageOnHover: false,
+            zoomToBoundsOnClick: true,
+          }).addTo(map);
+
+          alertCircles = L.layerGroup().addTo(map);
+
+          // --- Map Click → Send Lat/Lng to Python Bridge ---
+          map.on("click", function (e) {
+            console.log(`Map clicked at: ${e.latlng.lat}, ${e.latlng.lng}`);
+            if (bridge) {
+              bridge.onLocationSelected(e.latlng.lat, e.latlng.lng);
+            }
+          });
+
+          initHeatmapLayer();
+          console.log("Kenya Disaster Map initialized");
+        }
+
+        // --- Initialize Heatmap Layer ---
+        function initHeatmapLayer() {
+          heatLayer = L.heatLayer([], {
+            radius: 25,
+            blur: 18,
+            maxZoom: 10,
+            max: 1.0,
+            minOpacity: 0.4,
+            gradient: {
+              0.3: "#ffffb2", // Low
+              0.5: "#fecc5c", // Medium
+              0.7: "#fd8d3c", // High
+              1.0: "#e31a1c", // Critical
+            },
+          });
+          console.log("Heatmap layer initialized");
+        }
+
+        // --- Update Heatmap Dynamically from Python ---
+        function updateHeatmap(points) {
+          if (map.hasLayer(heatLayer)) map.removeLayer(heatLayer);
+          if (!points || points.length === 0) {
+            console.log("No heatmap points to render");
+            return;
+          }
+
+          initHeatmapLayer();
+          const heatData = points.map((p) => [
+            p.lat,
+            p.lng,
+            Math.min(1.0, p.intensity),
+          ]);
+          heatLayer.setLatLngs(heatData);
+          map.addLayer(heatLayer);
+          console.log(`Heatmap updated with ${points.length} data points`);
+        }
+
+        // --- Clear All Map Layers ---
+        function clearMarkers() {
+          markers.clearLayers();
+          if (map.hasLayer(heatLayer)) map.removeLayer(heatLayer);
+          alertCircles.clearLayers();
+          console.log("All markers and overlays cleared");
+        }
+
+        // --- Add Incident Marker (AI Detected or Reported) ---
+        function addIncidentMarker(lat, lng, data) {
+          const marker = L.marker([lat, lng], {
+            icon: L.divIcon({
+              className: `incident-marker ${
+                data.severity?.toLowerCase() || "low"
+              } ${data.severity === "Critical" ? "pulse" : ""}`,
+              html: `<div class="incident-dot"></div>`,
+              iconSize: [20, 20],
+            }),
+          });
+
+          let popupHTML = `
+            <b>${data.title || "Incident"}</b><br>
+            <b>Type:</b> ${data.type || "N/A"}<br>
+            <b>Severity:</b> ${data.severity || "Unknown"}<br>
+            <b>Status:</b> ${data.status || "Pending"}
+        `;
+
+          // Include AI-Predicted Resources if available
+          if (
+            Array.isArray(data.predicted_resources) &&
+            data.predicted_resources.length > 0
+          ) {
+            popupHTML += `
+                <hr>
+                <b>Suggested Resources:</b>
+                <ul style="margin:4px 0; padding-left:16px;">
+                    ${data.predicted_resources
+                      .map((r) => `<li>${r}</li>`)
+                      .join("")}
+                </ul>
+            `;
+          }
+
+          marker.bindPopup(popupHTML);
+          markers.addLayer(marker);
+        }
+
+        // --- Add Resource Marker (Firetrucks, Ambulances, etc.) ---
+        function addResourceMarker(lat, lng, data) {
+          const marker = L.marker([lat, lng], {
+            icon: L.divIcon({
+              className: "resource-marker",
+              html: `<div style="background-color:#007bff;border-radius:50%;width:16px;height:16px;"></div>`,
+              iconSize: [20, 20],
+            }),
+          });
+
+          marker.bindPopup(`
+            <b>${data.name || "Resource"}</b><br>
+            Type: ${data.type || "N/A"}<br>
+            Status: ${data.status || "Active"}<br>
+            Capacity: ${data.capacity || "N/A"}
+        `);
+
+          markers.addLayer(marker);
+        }
+
+        // --- Add or Update Alert Radius ---
+        function updateAlertRadius(lat, lng, radius, data) {
+          alertCircles.eachLayer((layer) => {
+            if (layer.getLatLng().lat === lat && layer.getLatLng().lng === lng)
+              alertCircles.removeLayer(layer);
+          });
+
+          if (radius > 0) {
+            const circle = L.circle([lat, lng], {
+              radius,
+              color: getAlertColor(data.severity),
+              fillColor: getAlertColor(data.severity),
+              fillOpacity: 0.25,
+              weight: 1.5,
+            }).bindPopup(`
+                <b>${data.title || "Alert"}</b><br>
+                <b>Type:</b> ${data.type || "N/A"}<br>
+                <b>Severity:</b> ${data.severity || "Unknown"}<br>
+                <b>Radius:</b> ${(radius / 1000).toFixed(1)} km
+            `);
+            alertCircles.addLayer(circle);
+          }
+        }
+
+        // --- Helper Function: Severity Color Codes ---
+        function getAlertColor(severity) {
+          switch (severity) {
+            case "Critical":
+              return "#e31a1c";
+            case "High":
+              return "#fd8d3c";
+            case "Medium":
+              return "#fecc5c";
+            case "Low":
+              return "#ffffb2";
+            default:
+              return "#808080";
+          }
+        }
+
+        // --- Public Functions for Python Bridge ---
+        return {
+          initMap,
+          updateHeatmap,
+          clearMarkers,
+          addIncidentMarker,
+          addResourceMarker,
+          updateAlertRadius,
+        };
+      })();
+    </script>
+  </body>
+</html>

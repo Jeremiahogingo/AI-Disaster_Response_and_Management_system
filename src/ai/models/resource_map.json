@@ -1,0 +1,171 @@
+{
+  "event_type_map": {
+    "Flood": [
+      { "resource": "Rescue Boats", "priority": 1, "quantity": "5-10 units" },
+      { "resource": "Life Jackets", "priority": 1, "quantity": "200+ units" },
+      { "resource": "Water Pumps", "priority": 2, "quantity": "10-15 units" },
+      { "resource": "Sandbags", "priority": 2, "quantity": "5000+ bags" },
+      { "resource": "Emergency Medical Teams", "priority": 1, "quantity": "3-5 teams" },
+      { "resource": "Mobile Toilets", "priority": 3, "quantity": "50+ units" },
+      { "resource": "Water Purification Tablets", "priority": 2, "quantity": "10000+ tablets" },
+      { "resource": "Temporary Bridges", "priority": 3, "quantity": "2-3 units" }
+    ],
+    "Flash Flood": [
+      { "resource": "Rapid Rescue Teams", "priority": 1, "quantity": "5-8 teams" },
+      { "resource": "Helicopters", "priority": 1, "quantity": "2-4 units" },
+      { "resource": "Swift Water Rescue Equipment", "priority": 1, "quantity": "20+ sets" },
+      { "resource": "Emergency Communication Systems", "priority": 2, "quantity": "10+ units" },
+      { "resource": "Mobile Command Center", "priority": 2, "quantity": "1 unit" }
+    ],
+    "Earthquake": [
+      { "resource": "Urban Search & Rescue Teams", "priority": 1, "quantity": "8-12 teams" },
+      { "resource": "Heavy Machinery (Excavators)", "priority": 1, "quantity": "15-20 units" },
+      { "resource": "Structural Engineers", "priority": 2, "quantity": "10-15 experts" },
+      { "resource": "Medical Field Hospital", "priority": 1, "quantity": "1-2 units" },
+      { "resource": "Temporary Shelters", "priority": 2, "quantity": "500+ capacity" },
+      { "resource": "Food Supply Trucks", "priority": 3, "quantity": "10-15 trucks" },
+      { "resource": "Collapse Rescue Equipment", "priority": 1, "quantity": "50+ sets" },
+      { "resource": "K-9 Search Units", "priority": 2, "quantity": "8-12 teams" }
+    ],
+    "Tsunami": [
+      { "resource": "Large-Scale Evacuation Teams", "priority": 1, "quantity": "20+ teams" },
+      { "resource": "Coastal Rescue Boats", "priority": 1, "quantity": "15-25 units" },
+      { "resource": "Helicopter Rescue Units", "priority": 1, "quantity": "5-8 units" },
+      { "resource": "Emergency Water Supplies", "priority": 2, "quantity": "10000+ liters" },
+      { "resource": "Satellite Communication Units", "priority": 2, "quantity": "5-10 units" },
+      { "resource": "Debris Removal Equipment", "priority": 2, "quantity": "20+ units" },
+      { "resource": "Saltwater Contamination Kits", "priority": 3, "quantity": "100+ kits" }
+    ],
+    "Wildfire": [
+      { "resource": "Firefighter Teams", "priority": 1, "quantity": "20-30 teams" },
+      { "resource": "Water Bomber Aircraft", "priority": 1, "quantity": "3-6 units" },
+      { "resource": "Fire Retardant", "priority": 1, "quantity": "50000+ gallons" },
+      { "resource": "Evacuation Buses", "priority": 2, "quantity": "15-25 buses" },
+      { "resource": "Respiratory Masks", "priority": 2, "quantity": "5000+ units" },
+      { "resource": "Wildlife Rescue Units", "priority": 3, "quantity": "5-8 teams" },
+      { "resource": "Firebreaks Construction Crew", "priority": 2, "quantity": "10-15 teams" },
+      { "resource": "Aerial Surveillance Drones", "priority": 2, "quantity": "8-12 units" }
+    ],
+    "Hurricane": [
+      { "resource": "Evacuation Coordination Teams", "priority": 1, "quantity": "15-20 teams" },
+      { "resource": "Search and Rescue Boats", "priority": 1, "quantity": "20-30 units" },
+      { "resource": "Temporary Shelters", "priority": 2, "quantity": "1000+ capacity" },
+      { "resource": "Power Restoration Crews", "priority": 2, "quantity": "25-40 teams" },
+      { "resource": "Emergency Food Supplies", "priority": 3, "quantity": "2 weeks for 5000" },
+      { "resource": "Roof Repair Teams", "priority": 3, "quantity": "20-30 teams" },
+      { "resource": "Flood Barrier Systems", "priority": 2, "quantity": "1000+ feet" }
+    ],
+    "Tornado": [
+      { "resource": "Urban Search & Rescue", "priority": 1, "quantity": "10-15 teams" },
+      { "resource": "Medical Trauma Teams", "priority": 1, "quantity": "8-12 teams" },
+      { "resource": "Debris Clearance Crews", "priority": 2, "quantity": "20-30 teams" },
+      { "resource": "Temporary Housing Units", "priority": 3, "quantity": "200+ units" },
+      { "resource": "Emergency Generators", "priority": 2, "quantity": "50+ units" },
+      { "resource": "Storm Shelter Assessments", "priority": 3, "quantity": "10-15 teams" }
+    ],
+    "Chemical Spill": [
+      { "resource": "Hazmat Teams", "priority": 1, "quantity": "5-10 teams" },
+      { "resource": "Containment Booms", "priority": 1, "quantity": "2000+ feet" },
+      { "resource": "Decontamination Units", "priority": 2, "quantity": "3-5 units" },
+      { "resource": "Environmental Assessment Teams", "priority": 2, "quantity": "3-5 teams" },
+      { "resource": "Air Quality Monitoring", "priority": 2, "quantity": "10-15 stations" },
+      { "resource": "Evacuation Coordination", "priority": 1, "quantity": "5-8 teams" },
+      { "resource": "Chemical Neutralization Kits", "priority": 3, "quantity": "50+ kits" }
+    ],
+    "Terrorist Attack": [
+      { "resource": "SWAT/Counter-Terror Units", "priority": 1, "quantity": "8-12 teams" },
+      { "resource": "Medical Mass Casualty Teams", "priority": 1, "quantity": "10-15 teams" },
+      { "resource": "Bomb Disposal Units", "priority": 1, "quantity": "3-5 teams" },
+      { "resource": "Crisis Negotiation Team", "priority": 2, "quantity": "2-3 teams" },
+      { "resource": "Forensic Investigation Units", "priority": 3, "quantity": "5-8 teams" },
+      { "resource": "Psychological First Aid", "priority": 2, "quantity": "10-15 counselors" }
+    ],
+    "Pandemic Cluster": [
+      { "resource": "Medical Response Teams", "priority": 1, "quantity": "15-20 teams" },
+      { "resource": "Testing Kits and Stations", "priority": 1, "quantity": "5000+ kits" },
+      { "resource": "PPE (Masks/Gowns/Gloves)", "priority": 1, "quantity": "10000+ sets" },
+      { "resource": "Field Hospital Units", "priority": 2, "quantity": "2-3 units" },
+      { "resource": "Vaccination Logistics", "priority": 2, "quantity": "5-8 teams" },
+      { "resource": "Contact Tracing Teams", "priority": 2, "quantity": "20-30 investigators" },
+      { "resource": "Quarantine Facilities", "priority": 3, "quantity": "200+ beds" }
+    ],
+    "Building Collapse": [
+      { "resource": "Urban Search & Rescue", "priority": 1, "quantity": "8-12 teams" },
+      { "resource": "Heavy Lifting Machinery", "priority": 1, "quantity": "10-15 units" },
+      { "resource": "Structural Engineers", "priority": 2, "quantity": "5-10 experts" },
+      { "resource": "Medical Teams", "priority": 1, "quantity": "6-10 teams" },
+      { "resource": "Shoring Equipment", "priority": 2, "quantity": "20+ sets" },
+      { "resource": "Victim Location Technology", "priority": 2, "quantity": "8-12 units" }
+    ],
+    "Cyber Attack": [
+      { "resource": "Incident Response Team (IT)", "priority": 1, "quantity": "5-8 teams" },
+      { "resource": "Cybersecurity Forensics", "priority": 1, "quantity": "3-5 teams" },
+      { "resource": "Backup & Recovery Systems", "priority": 2, "quantity": "10-15 units" },
+      { "resource": "Public Communication Team", "priority": 2, "quantity": "3-5 teams" },
+      { "resource": "System Isolation Equipment", "priority": 2, "quantity": "20+ units" },
+      { "resource": "Alternative Communication", "priority": 3, "quantity": "5-8 systems" }
+    ],
+    "Power Grid Failure": [
+      { "resource": "Power Restoration Crews", "priority": 1, "quantity": "30-50 teams" },
+      { "resource": "Portable Generators", "priority": 1, "quantity": "100+ units" },
+      { "resource": "Emergency Lighting", "priority": 2, "quantity": "500+ units" },
+      { "resource": "Medical Backup Support", "priority": 2, "quantity": "15-20 teams" },
+      { "resource": "Traffic Signal Technicians", "priority": 3, "quantity": "10-15 teams" },
+      { "resource": "Water Pump Backup Systems", "priority": 2, "quantity": "20-30 units" }
+    ],
+    "Transportation Accident": [
+      { "resource": "Ambulances", "priority": 1, "quantity": "8-15 units" },
+      { "resource": "Fire & Rescue Teams", "priority": 1, "quantity": "5-10 teams" },
+      { "resource": "Towing Services", "priority": 3, "quantity": "3-5 heavy tow" },
+      { "resource": "Hazmat Teams", "priority": 2, "quantity": "2-3 teams" },
+      { "resource": "Traffic Control Units", "priority": 2, "quantity": "5-8 teams" },
+      { "resource": "Crisis Counselors", "priority": 3, "quantity": "3-5 counselors" }
+    ]
+  },
+  "severity_map": {
+    "Low": [
+      { "resource": "First Aid Kit", "priority": 1, "quantity": "10-20 kits" },
+      { "resource": "Basic Medical Team", "priority": 2, "quantity": "2-3 teams" },
+      { "resource": "Local Police Patrol", "priority": 3, "quantity": "3-5 units" },
+      { "resource": "Incident Commander", "priority": 1, "quantity": "1 officer" }
+    ],
+    "Medium": [
+      { "resource": "Advanced Medical Team", "priority": 1, "quantity": "4-6 teams" },
+      { "resource": "Police Response Unit", "priority": 2, "quantity": "6-10 officers" },
+      { "resource": "Fire Engine Company", "priority": 2, "quantity": "2-3 units" },
+      { "resource": "Mobile Water Supply", "priority": 3, "quantity": "5000+ liters" },
+      { "resource": "Temporary Lighting", "priority": 3, "quantity": "20+ units" },
+      { "resource": "Public Information Officer", "priority": 2, "quantity": "1 officer" }
+    ],
+    "High": [
+      { "resource": "Multiple Ambulances", "priority": 1, "quantity": "8-12 units" },
+      { "resource": "Specialized Rescue Team", "priority": 1, "quantity": "3-5 teams" },
+      { "resource": "Helicopter Medevac", "priority": 2, "quantity": "1-2 units" },
+      { "resource": "Temporary Morgue", "priority": 3, "quantity": "1 unit" },
+      { "resource": "Large Food Supply Trucks", "priority": 3, "quantity": "3-5 trucks" },
+      { "resource": "Mobile Command Center", "priority": 2, "quantity": "1 unit" },
+      { "resource": "Crisis Intervention Team", "priority": 3, "quantity": "5-8 counselors" }
+    ],
+    "Critical": [
+      { "resource": "Field Hospital", "priority": 1, "quantity": "1-2 units" },
+      { "resource": "National Guard/Military", "priority": 1, "quantity": "Company-sized element" },
+      { "resource": "Multiple Helicopters", "priority": 2, "quantity": "3-6 units" },
+      { "resource": "Disaster Mortuary Team", "priority": 3, "quantity": "1 team" },
+      { "resource": "Military Engineering Corps", "priority": 2, "quantity": "Platoon-sized element" },
+      { "resource": "Mass Evacuation Transport", "priority": 2, "quantity": "50+ buses" },
+      { "resource": "Satellite Communication", "priority": 2, "quantity": "3-5 systems" },
+      { "resource": "International Aid Coordination", "priority": 3, "quantity": "1 team" }
+    ]
+  },
+  "resource_categories": {
+    "medical": ["Ambulances", "Medical Teams", "Field Hospital", "First Aid Kit", "PPE"],
+    "rescue": ["Rescue Boats", "Helicopters", "Search & Rescue Teams", "Heavy Machinery"],
+    "support": ["Food Supplies", "Water Purification", "Temporary Shelters", "Generators"],
+    "specialized": ["Hazmat Teams", "Bomb Disposal", "Cyber Security", "Structural Engineers"]
+  },
+  "response_times": {
+    "immediate": ["Ambulances", "Police", "Firefighters", "First Responders"],
+    "rapid": ["Rescue Teams", "Medical Teams", "Hazmat", "Search Dogs"],
+    "extended": ["Engineering Corps", "Shelter Setup", "Food Distribution", "Infrastructure Repair"]
+  }
+}
