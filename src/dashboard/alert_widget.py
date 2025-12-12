@@ -1,4 +1,4 @@
-"""Alert management widget for DisasterConnect."""
+"""Alert management widget for Disaster_management_system."""
 from PyQt5.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QLabel, 
                            QPushButton, QFrame, QTableWidget, QTableWidgetItem,
                            QComboBox, QLineEdit, QDialog, QFormLayout,

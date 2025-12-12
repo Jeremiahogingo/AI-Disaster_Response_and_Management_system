@@ -1,4 +1,4 @@
-"""Main dashboard window for DisasterConnect."""
+"""Main dashboard window for Disaster_management_system."""
 from PyQt5.QtWidgets import (QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
                            QLabel, QPushButton, QFrame, QStackedWidget,
                            QScrollArea, QSizePolicy, QGridLayout, QSpacerItem)
@@ -18,7 +18,7 @@ class DashboardWindow(QMainWindow):
     def __init__(self, auth_manager=None):
         super().__init__()
         self.auth_manager = auth_manager
-        self.setWindowTitle("DisasterConnect - Dashboard")
+        self.setWindowTitle("Disaster_management_system - Dashboard")
         self.setMinimumSize(1200, 800)
         
         # Set window icon
@@ -91,7 +91,7 @@ class DashboardWindow(QMainWindow):
             logo_image.setAlignment(Qt.AlignCenter)
         
         # Add logo text
-        logo_label = QLabel("DisasterConnect")
+        logo_label = QLabel("Disaster_management_system")
         logo_label.setObjectName("logo-text")
         logo_label.setAlignment(Qt.AlignCenter)
         

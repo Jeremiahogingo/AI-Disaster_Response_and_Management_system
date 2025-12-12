@@ -1,15 +1,15 @@
-# DisasterConnect API Documentation
+# disaster_management_system API Documentation
 
 ## Overview
 
-The DisasterConnect API provides programmatic access to disaster response coordination features. This RESTful API allows you to manage incidents, resources, and communications programmatically.
+The disaster_management_system API provides programmatic access to disaster response coordination features. This RESTful API allows you to manage incidents, resources, and communications programmatically.
 
 ## Authentication
 
 All API requests require authentication using JWT (JSON Web Tokens).
 
 ```bash
-curl -H "Authorization: Bearer YOUR_JWT_TOKEN" https://api.disasterconnect.local/v1/incidents
+curl -H "Authorization: Bearer YOUR_JWT_TOKEN" https://api.disaster_management_system.local/v1/incidents
 ```
 
 ### Obtaining a Token
@@ -207,17 +207,17 @@ Request body:
 
 ## SDKs and Libraries
 
-- [Python SDK](https://github.com/Razee4315/DisasterConnect-python)
-- [JavaScript SDK](https://github.com/Razee4315/DisasterConnect-js)
+- [Python SDK](https://github.com/jeremiahogingo/disaster_management_system-python)
+- [JavaScript SDK](https://github.com/jeremiahogingo/disaster_management_system-js)
 
 ## Examples
 
 ### Python Example
 
 ```python
-from disasterconnect import DisasterConnectClient
+from disaster_management_system import disaster_management_systemClient
 
-client = DisasterConnectClient('your_api_key')
+client = disaster_management_systemClient('your_api_key')
 
 # Create an incident
 incident = client.incidents.create(
@@ -238,9 +238,9 @@ client.incidents.assign_resource(
 ### JavaScript Example
 
 ```javascript
-const DisasterConnect = require('disasterconnect');
+const DisasterConnect = require('disaster_management_system');
 
-const client = new DisasterConnect('your_api_key');
+const client = new disaster_management_system('your_api_key');
 
 // List active incidents
 client.incidents.list({ status: 'active' })
@@ -256,5 +256,5 @@ client.incidents.list({ status: 'active' })
 
 For API support:
 - Email: saqlainrazee@gmail.com
-- GitHub Issues: [Report a bug](https://github.com/Razee4315/DisasterConnect/issues)
-- API Status: [status.disasterconnect.local](https://status.disasterconnect.local)
+- GitHub Issues: [Report a bug](https://github.com/jeremiahogingo/disaster_management_system/issues)
+- API Status: [status.disaster_management_system.local](https://status.disaster_management_system.local)

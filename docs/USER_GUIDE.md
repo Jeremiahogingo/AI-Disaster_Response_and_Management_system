@@ -1,6 +1,6 @@
-# DisasterConnect User Guide
+# Disaster_Management_System_ User Guide
 
-Welcome to DisasterConnect! This guide will help you understand and use all the features of our disaster response coordination platform.
+Welcome to Disaster_Management_System! This guide will help you understand and use all the features of our disaster response coordination platform.
 
 ## Table of Contents
 - [Getting Started](#getting-started)
@@ -162,7 +162,7 @@ Generate insights with our analytics tools:
 ### Support
 If you encounter any issues:
 1. Check our [FAQ](FAQ.md)
-2. Contact support: saqlainrazee@gmail.com
+2. Contact support: jerrylion39t@gmail.com
 3. Submit an issue on GitHub
 
 ## Tips and Best Practices
@@ -195,9 +195,9 @@ If you encounter any issues:
 ## Additional Resources
 
 - [API Documentation](API.md)
-- [Video Tutorials](https://github.com/Razee4315/DisasterConnect/wiki/Tutorials)
-- [Community Forums](https://github.com/Razee4315/DisasterConnect/discussions)
+- [Video Tutorials](https://github.com/jeremiahogingo/disaster_management_system/wiki/Tutorials)
+- [Community Forums](https://github.com/jeremiahogingo/disaster_management_system/discussions)
 
 ---
 
-For technical support or feature requests, please visit our [GitHub repository](https://github.com/Razee4315/DisasterConnect).
+For technical support or feature requests, please visit our [GitHub repository](https://github.com/jeremiahogingo/disaster_management_system).
