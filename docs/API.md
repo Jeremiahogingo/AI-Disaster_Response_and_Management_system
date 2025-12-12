@@ -255,6 +255,6 @@ client.incidents.list({ status: 'active' })
 ## Support
 
 For API support:
-- Email: saqlainrazee@gmail.com
+- Email: jerrylion39t@gmail.com
 - GitHub Issues: [Report a bug](https://github.com/jeremiahogingo/disaster_management_system/issues)
 - API Status: [status.disaster_management_system.local](https://status.disaster_management_system.local)
